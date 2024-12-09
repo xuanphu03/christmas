@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: #151522;
+}
+
+#snowCanvas {
+  position: absolute;
+  z-index: -10;
+  opacity: 0.5;
+}
+
+svg {
+  width: 90%;
+  height: 90%;
+  visibility: hidden;
+}
+
+h1 {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  font-size: 50px;
+  transform: translateX(-50%);
+}
+
+a {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+  position: absolute;
+  z-index: 1;
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #0a2b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1b53a7;
+}
+
+.button {
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  animation: showButton 0s forwards; 
+  animation-delay: 8s; 
+}
+
+@keyframes showButton {
+  to {
+    visibility: visible; 
+  }
+}
+
+.notification {
+  position: absolute;
+  width: 240px;
+  height: 160px;
+  background-color: #ffb6c1;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  border: 4px solid #ffffff;
+  opacity: 1;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 5px 5px 0 0;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.notification-header span {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.notification p {
+  margin: 0;
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.minimize-btn {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 0, 0);
+  margin-left: auto;
+}
+
+.minimize-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
